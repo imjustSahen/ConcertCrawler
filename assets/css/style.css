@@ -104,9 +104,9 @@
     border-radius: 50px;
     background-color: rgba(220, 189, 153, 0.20);
     color: inherit;
-  }
+}
 
-  #genres {
+#genres {
     width: 100%;
     min-width: 150px;
     float: right;
@@ -116,9 +116,9 @@
     border-radius: 50px;
     background-color: rgba(220, 189, 153, 0.20);
     color: inherit;
-  }
+}
 
-  .vidHero .intro .searchSection .search_input_item input[type=date] {
+.vidHero .intro .searchSection .search_input_item input[type=date] {
     width: 100%;
     min-width: 150px;
     float: right;
@@ -128,7 +128,22 @@
     border-radius: 50px;
     background-color: rgba(220, 189, 153, 0.20);
     color: inherit;
-  }
+}
+
+  /* Testing w/ JS */
+#events-container {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+
+}
+
+.event-card {
+    flex-basis: 33.33%;
+    border-left: solid 2px black;
+}
 
 /*add responsiveness*/
 @media screen and (min-width:1020px) {
