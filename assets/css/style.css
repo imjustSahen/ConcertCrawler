@@ -1,0 +1,159 @@
+* {
+    margin: 0;
+}
+
+/*Video Hero Style*/
+.vidHero {
+    height: 100vh;
+    width:100%;
+    background: aliceblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.vidHero::after {
+    width: 100%;
+    height: 100%;
+    content: '';
+    position:absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.5);
+}
+
+.vidHero video {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    object-fit: cover;
+}
+
+.vidHero .intro {
+    position: relative;
+    z-index: 20;
+    text-align: center;
+    color: white;
+}
+
+.vidHero .texture {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 15;   
+    background-image: url('../Assets/imgs/cross-stripes.png');
+}
+
+.vidHero .intro {
+    width: 75%;
+}
+
+.vidHero .intro h1 {
+    text-transform: uppercase;
+    font-size: 3rem;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.vidHero .intro h2 {
+    text-transform: lowercase;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 10px;
+    margin: 0;
+}
+
+
+/*Search Inputs Styling*/
+.vidHero .intro .searchSection {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 50px 20px 20px;
+}
+
+.vidHero .intro .searchSection .search_input_item {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    display: flex;
+    flex-wrap: flex;
+    color: white;
+    border-radius: 12px;
+    /*margin: 0 10px 10px;*/
+    /*padding: 0 10px;*/
+    box-sizing: border-box;
+    flex-grow: 1;
+}
+
+.vidHero .intro .searchSection .search_input_item input[type=text] {
+    width: 100%;
+    min-width: 300px;
+    float: left;
+    margin: 15px 8px 0px;
+    padding: 15px 15px;
+    border: 1px white solid;
+    border-radius: 50px;
+    background-color: rgba(220, 189, 153, 0.20);
+    color: inherit;
+  }
+
+  #genres {
+    width: 100%;
+    min-width: 150px;
+    float: right;
+    margin: 15px 8px 0px;
+    padding: 15px 15px;
+    border: 1px white solid;
+    border-radius: 50px;
+    background-color: rgba(220, 189, 153, 0.20);
+    color: inherit;
+  }
+
+  .vidHero .intro .searchSection .search_input_item input[type=date] {
+    width: 100%;
+    min-width: 150px;
+    float: right;
+    margin: 15px 8px 0px;
+    padding: 15px 15px;
+    border: 1px white solid;
+    border-radius: 50px;
+    background-color: rgba(220, 189, 153, 0.20);
+    color: inherit;
+  }
+
+/*add responsiveness*/
+@media screen and (min-width:1020px) {
+    .vidHero .intro h1 {
+        font-size: 5rem;
+    }
+    .vidHero .intro h2 {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width:1020px) {
+    .vidHero .intro h1 {
+        font-size: 4rem;
+    }
+    .vidHero .intro h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .vidHero .intro h1 {
+        font-size: 3rem;
+    }
+    .vidHero .intro h2 {
+        font-size: 1rem;
+    }
+}
