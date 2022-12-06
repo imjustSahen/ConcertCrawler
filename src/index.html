@@ -4,11 +4,80 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Pet Sitter</title>
+    <title>Concert Crawler </title>
+
+    <link href="../assets/css/style.css" rel="stylesheet">
     <link href="/assets/css/output.css" rel="stylesheet">
+
+    <!--Connecting Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&family=Montserrat:wght@400;800&display=swap" rel="stylesheet">
+
 </head>
+
+
 <body class="bg-gray-400">
-    <header>
+    <div class="vidHero">
+        <!--Navigation-->
+        <div class="navbar">
+
+        </div>
+
+        <!--Video Background. If browser doesn't support video, replace with image-->
+        <video src="../assets/imgs/Pexels Videos 2022395.mp4" type="video/mp4" alt="Video Background" loop muted autoplay preload="auto"></video>
+        <div class="texture"></div>
+
+        <!--Page Intro + Search-->
+        <div class="intro">
+            <div class="introText">
+                <h1>Concert Crawler</h1>
+                <h2>Where the music is at</h2>
+            </div>
+            <div class="searchSection">
+                <!--Location input-->
+                <div class="search_input_item">
+                    <input type="text" class="locationSearch" placeholder="Where are we going?">
+                </div>
+                <!--Genre Input-->
+                <div class="search_input_item">
+                    <select id="genres" name="genres">
+                        <option value="all genres">All Genres</option>
+                        <option value="alternative">Alternative</option>
+                        <option value="ballads">Ballads/Romantic</option>
+                        <option value="blues">Blues</option>
+                        <option value="chanson">Chanson Franciose</option>
+                        <option value="childrens">Children's Music</option>
+                        <option value="dance">Dance/Electronic</option>
+                        <option value="folk">Folk</option>
+                        <option value="rap">Hip-Hop/Rap</option>
+                        <option value="holiday">Holiday</option>
+                        <option value="jazz">Jazz</option>
+                        <option value="latin">Latin</option>
+                        <option value="chanson">Chanson Franciose</option>
+                        <option value="medieval">Medieval/Renaissance</option>
+                        <option value="metal">Metal</option>
+                        <option value="new">New Age</option>
+                        <option value="other">Other</option>
+                        <option value="pop">Pop</option>
+                        <option value="rb">R&B</option>
+                        <option value="reggae">Reggae</option>
+                        <option value="religious">Religious</option>
+                        <option value="rock">Rock</option>
+                        <option value="world">World</option>
+                      </select>
+                </div>
+                <!--Date Input-->
+                <div class="search_input_item">
+                    <div class="search_input_item">
+                        <input type="date" class="datePicker">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!--<header>
         <h1 class="bg-yellow-400 underline text-center">Nav Bar</h1>
     </header>
     
@@ -31,6 +100,6 @@
                 </button>
             </div>
         </div>
-    </div>
+    </div>-->
 </body>
 </html>
