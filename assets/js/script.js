@@ -65,7 +65,7 @@ function showPosition(data, place) {
   $.ajax({
     type: "GET",
     url:
-      "https://app.ticketmaster.com/discovery/v2/events.json?size=10&apikey=pLOeuGq2JL05uEGrZG7DuGWu6sh2OnMz&city="+searchElement.value,
+      "https://app.ticketmaster.com/discovery/v2/events.json?_limit=10&apikey=pLOeuGq2JL05uEGrZG7DuGWu6sh2OnMz&city="+searchElement.value,
     async: true,
     dataType: "json",
     success: function (json) {
@@ -83,7 +83,9 @@ function showPosition(data, place) {
 
 function showEvents(json) {
   for (var i = 0; i < json.page.size; i++) {
-    $("#events").append("<p>" + json._embedded.events[i].name + "</p>");
+    $("#eventone").append("<p>" + json._embedded.events[i].name + "</p>");
+    $("#eventtwo").append("<p>" + json._embedded.events[i].priceRanges[0].max + "</p>");
+    $("#eventthree").append("<p>" + json._embedded.events[i]._embedded.venues[0].name + "</p>");
   }
 }
 

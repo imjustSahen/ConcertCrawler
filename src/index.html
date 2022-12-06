@@ -37,7 +37,7 @@
             <div class="searchSection">
                 <!--Location input-->
                 <div class="search_input_item">
-                    <input type="text" class="locationSearch" placeholder="Where are we going?">
+                    <input id="city" type="text" class="locationSearch" placeholder="Where are we going?">
                 </div>
                 <!--Genre Input-->
                 <div class="search_input_item">
@@ -101,5 +101,20 @@
             </div>
         </div>
     </div>-->
+    <!-- For JavaScript Code -->
+
+    <p id="location">location there</p>
+    <div id="map"></div>
+    <div id="events"></div>
+    <div id="events-container">
+        <div id="eventone" class="event-card"></div>
+        <div id="eventtwo" class="event-card"></div>
+        <div id="eventthree" class="event-card"></div>
+    </div>
 </body>
+<script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBD4sp3WijVBagm6u9oqfslRBK4t8Dl1jE&libraries=places"></script>
+
+<script defer src="../assets/js/script.js"></script>
 </html>
