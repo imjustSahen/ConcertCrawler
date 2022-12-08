@@ -34,6 +34,7 @@ searchBox.addListener("places_changed", function getCity() {
     });
 });
 
+var geoLocation = getLocation();
 
 function getLocation() {
   if (navigator.geolocation) {
@@ -67,7 +68,7 @@ function showPosition(data, place) {
   $.ajax({
     type: "GET",
     url:
-      "https://app.ticketmaster.com/discovery/v2/events.json?size=5&apikey=pLOeuGq2JL05uEGrZG7DuGWu6sh2OnMz&city="+searchElement.value,
+      "https://app.ticketmaster.com/discovery/v2/events.json?size=5&apikey=pLOeuGq2JL05uEGrZG7DuGWu6sh2OnMz&segmentName=Music&city="+searchElement.value,
     async: true,
     dataType: "json",
     success: function (json) {
@@ -92,25 +93,25 @@ function showPosition(data, place) {
 // }
 
 // Events Display and Navigation
-var page = 0;
+var page = 1;
 
 function getEvents(page) {
   $("#events-panel").show();
   $("#attraction-panel").hide();
 
-  if (page < 0) {
-    page = 0;
+  if (page < 1) {
+    page = 1;
     return;
   }
-  if (page > 0) {
+  if (page > 1) {
     if (page > getEvents.json.page.totalPages-1) {
-      page=0;
+      page=1;
     }
   }
   
   $.ajax({
     type:"GET",
-    url:"https://app.ticketmaster.com/discovery/v2/events.json?apikey=pLOeuGq2JL05uEGrZG7DuGWu6sh2OnMz&size=4&page="+page+searchElement.value,
+    url:"https://app.ticketmaster.com/discovery/v2/events.json?size=5&apikey=pLOeuGq2JL05uEGrZG7DuGWu6sh2OnMz&segmentName=Music&page="+page+'&city='+searchElement.value,
     async:true,
     dataType: "json",
     success: function(json) {
@@ -122,6 +123,14 @@ function getEvents(page) {
   		   }
   });
 }
+
+$("#prev").click(function() {
+  getEvents(--page);
+});
+
+$("#next").click(function() {
+  getEvents(++page);
+});
 
 function showEvents(json) {
   var items = $("#events .list-group-item");
@@ -149,14 +158,6 @@ function showEvents(json) {
     item=item.next();
   }
 }
-
-$("#prev").click(function() {
-  getEvents(--page);
-});
-
-$("#next").click(function() {
-  getEvents(++page);
-});
 
 function getAttraction(id) {
   $.ajax({
