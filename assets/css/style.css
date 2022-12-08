@@ -142,7 +142,12 @@
 
 .event-card {
     flex-basis: 33.33%;
-    border-left: solid 2px black;
+    /* border-bottom: solid 2px black; */
+}
+
+.event-card p {
+    border-bottom: solid 2px black;
+    padding: 5px;
 }
 
 /*add responsiveness*/
