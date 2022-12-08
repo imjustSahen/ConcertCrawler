@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,7 +13,9 @@
     <!--Connecting Google Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&family=Montserrat:wght@400;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&family=Montserrat:wght@400;800&display=swap"
+        rel="stylesheet">
 
 </head>
 
@@ -25,7 +28,8 @@
         </div>
 
         <!--Video Background. If browser doesn't support video, replace with image-->
-        <video src="../assets/imgs/Pexels Videos 2022395.mp4" type="video/mp4" alt="Video Background" loop muted autoplay preload="auto"></video>
+        <video src="../assets/imgs/Pexels Videos 2022395.mp4" type="video/mp4" alt="Video Background" loop muted
+            autoplay preload="auto"></video>
         <div class="texture"></div>
 
         <!--Page Intro + Search-->
@@ -65,7 +69,7 @@
                         <option value="religious">Religious</option>
                         <option value="rock">Rock</option>
                         <option value="world">World</option>
-                      </select>
+                    </select>
                 </div>
                 <!--Date Input-->
                 <div class="search_input_item">
@@ -106,15 +110,76 @@
     <p id="location">location there</p>
     <div id="map"></div>
     <div id="events"></div>
-    <div id="events-container">
-        <div id="eventone" class="event-card"></div>
-        <div id="eventtwo" class="event-card"></div>
-        <div id="eventthree" class="event-card"></div>
+    <table>
+        <tbody>
+            <tr id="events-container">
+                <td id="eventone" class="event-card"></td>
+                <td id="eventtwo" class="event-card"></td>
+                <td id="eventthree" class="event-card"></td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-6">
+                <div id='events-panel' class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Events</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div id="events" class="list-group">
+                            <a href="#" class="list-group-item">
+                                <h4 class="list-group-item-heading"></h4>
+                                <p class="list-group-item-text"></p>
+                                <p class="venue"></p>
+                            </a>
+                            <a href="#" class="list-group-item">
+                                <h4 class="list-group-item-heading"></h4>
+                                <p class="list-group-item-text"></p>
+                                <p class="venue"></p>
+                            </a>
+                            <a href="#" class="list-group-item">
+                                <h4 class="list-group-item-heading"></h4>
+                                <p class="list-group-item-text"></p>
+                                <p class="venue"></p>
+                            </a>
+                            <a href="#" class="list-group-item">
+                                <h4 class="list-group-item-heading"></h4>
+                                <p class="list-group-item-text"></p>
+                                <p class="venue"></p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="panel-footer">
+                        <nav>
+                            <ul class="pager">
+                                <li id="prev" class="previous"><a href="#"><span aria-hidden="true">&larr;</span></a>
+                                </li>
+                                <li id="next" class="next"><a href="#"><span aria-hidden="true">&rarr;</span></a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+
+                <div id='attraction-panel' class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Attraction</h3>
+                    </div>
+                    <div id="attraction" class="panel-body">
+                        <h4 class="list-group-item-heading">Attraction title</h4>
+                        <img class="col-xs-12" src="">
+                        <p id="classification"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 
-<script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBD4sp3WijVBagm6u9oqfslRBK4t8Dl1jE&libraries=places"></script>
+<script defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBD4sp3WijVBagm6u9oqfslRBK4t8Dl1jE&libraries=places"></script>
 
 <script defer src="../assets/js/script.js"></script>
+
 </html>
