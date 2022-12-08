@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    
+    <link href="../assets/css/style.css" rel="stylesheet">
+    <link href="/assets/css/output.css" rel="stylesheet">
+
+    <!-- Accessing icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!--Connecting Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&family=Montserrat:wght@400;800&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-black text-white ">
+    <!-- nav bar -->
+ 
+    <nav class="flex p-2 justify-end items-center text-center border">
+        <ul class="flex w-60 justify-between">
+            <button class="hover:border-2">Home</button>
+            <button>About Us</button>
+            <button>Contact</button>
+        </ul>
+    </nav>
+
+    <main>
+    <!-- Header + image -->
+    <header class="flex justify-center pb-40">
+        <div class="relative">   
+            <div class="flex flex-col text-center items-center left-80 bg-opacity-80">
+                <img src="../assets/imgs/backstage.jpeg" alt="backstage image" class="w-screen pb-44 opacity-60">
+                <h1 class="text-8xl">About Us</h1>
+                <h4 class="font-bold pt-2 text-gray-200">FULL STACK WEB DEV STUDENTS</h4>
+                <br>
+                <p class="text-gray-200">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum provident cum et dolorum!<br>
+                    Itaque labore reiciendis temporibus velit eos autem iste deserunt ullam quis nemo eum enim, vel, saepe accusantium?</p>
+                </img>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contact Form -->
+    <card class="flex justify-center">
+        <div class="py-8 lg:py-16 px-4 max-w-screen-md border-2 rounded border-gray-500 bg-gray-800">
+            <h2 class="mb-4 text-4xl tracking-tight text-center text-white">Contact Us</h2>
+            <p class="mb-8 lg:mb-16 font-light text-center text-gray-200 sm:text-xl">Got a technical issue? Want to send feedback about a beta feature? Need details about our Business plan? Let us know.</p>
+            <form action="#" class="space-y-8">
+                <div>
+                    <label for="name" class="block mb-2 text-sm text-gray-100">Full name</label>
+                    <input for="name" id="name" class="border text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 focus:ring-primary-500 focus:border-primary-500 shadow-sm-light bg-gray-700 border-gray-600 placeholder-gray-400 text-white " placeholder="Jane Doe" required>
+                </div>
+                <div>
+                    <label for="email" class="block mb-2 text-sm font-medium text-gray-300">Your email</label>
+                    <input type="email" id="email" class="shadow-sm border text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 focus:ring-primary-500 focus:border-primary-500 hadow-sm-light bg-gray-700 border-gray-600 placeholder-gray-400 text-white " placeholder="name@flowbite.com" required>
+                </div>
+    
+                <div class="sm:col-span-2">
+                    <label for="message" class="block mb-2 text-sm font-medium text-gray-300">Your message</label>
+                    <textarea id="message" rows="6" class="block p-2.5 w-full text-sm rounded-lg shadow-sm border focus:ring-primary-500 focus:border-primary-500 focus:ring-primary-500 focus:border-primary-500 bg-gray-700 border-gray-600 placeholder-gray-400 text-white " placeholder="Leave a comment..."></textarea>
+                </div>
+                <button type="submit" class="py-3 px-5 text-sm font-medium text-center text-white border border-x-gray-400 rounded-lg bg-primary-700 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 hover:bg-primary-700 focus:ring-primary-800">Send message</button>
+            </form>
+        </div>
+    </card>
+
+    <!-- Let's Connect -->
+    <section class="flex flex-col text-center pt-40">
+        <h1 class="text-8xl pb-8">Let's Connect</h1>
+        <div class="flex flex-row justify-evenly my-14">
+            <card class="flex flex-col py-4 px-4 max-w-screen-md border-2 rounded border-gray-500 bg-gray-800">
+                <h1 class="underline">Sahen Garcia</h1>
+                <div class="p-8"> 
+                    <i class="fa fa-github" style="font-size: 30px;"></i>
+                    <i class="fa fa-linkedin" style="font-size: 30px;"></i>
+                    <i class="fa fa-envelope" style="font-size: 30px"></i>
+                </div>
+            </card>
+            
+            <card class="py-4 px-4 max-w-screen-md border-2 rounded border-gray-500 bg-gray-800">
+                <h1>Paula Hopker</h1>
+                <div class="p-8"> 
+                    <i class="fa fa-github" style="font-size: 30px;"></i>
+                    <i class="fa fa-linkedin" style="font-size: 30px;"></i>
+                    <i class="fa fa-envelope" style="font-size: 30px"></i>
+                </div>
+            </card>
+
+            <card class="py-4 px-4 max-w-screen-md border-2 rounded border-gray-500 bg-gray-800">
+                <h1>Carson Garbe</h1>
+                <div class="p-8"> 
+                    <i class="fa fa-github" style="font-size: 30px;"></i>
+                    <i class="fa fa-linkedin" style="font-size: 30px;"></i>
+                    <i class="fa fa-envelope" style="font-size: 30px"></i>
+                </div>
+            </card>
+
+            <card class="py-4 px-4 max-w-screen-md border-2 rounded border-gray-500 bg-gray-800">
+                <h1>Matthew Delgado</h1>
+                <div class="p-8"> 
+                    <i class="fa fa-github" style="font-size: 30px;"></i>
+                    <i class="fa fa-linkedin" style="font-size: 30px;"></i>
+                    <i class="fa fa-envelope" style="font-size: 30px"></i>
+                </div>
+            </card>
+        </div>
+    </section>
+
+    </main>
+</body>
+</html>

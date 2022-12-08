@@ -1,4 +1,4 @@
-//Anytime this file is altered, enter 'npm run dev'
+
 {
   "devDependencies": {
     "tailwindcss": "^3.2.4"
