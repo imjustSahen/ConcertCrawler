@@ -17,17 +17,44 @@
         href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&family=Montserrat:wght@400;800&display=swap"
         rel="stylesheet">
 
+    <!--Tailwind fix-->
+    <script src="https://cdn.tailwindcss.com"></script>
+
 </head>
 
 
-<body class="bg-gray-400">
-    <div class="vidHero">
-        <!--Navigation-->
-        <div class="navbar">
-
+<body>
+    <!--Navigation-->
+    <nav>
+        <div class="logo">
+            <img src="../assets/imgs/CC-logo.png">
         </div>
+        <ul class="navbar">
+            <li class="index">
+                <a href="index.html">Home</a>
+            </li>
+            <li>
+             <a href="contact.html">About Us</a>
+            </li>
+            <li>
+             <a href="contact.html/#contact-us">Contact</a>
+            </li>
+        </ul>
+        <div class="burger">
+            <div class="line1">
 
-        <!--Video Background. If browser doesn't support video, replace with image-->
+            </div>
+            <div class="line2">
+
+            </div>
+            <div class="line3">
+                
+            </div>
+        </div>
+    </nav> 
+    
+    <!--Video Background. If browser doesn't support video, replace with image-->
+    <div class="vidHero">
         <video src="../assets/imgs/Pexels Videos 2022395.mp4" type="video/mp4" alt="Video Background" loop muted
             autoplay preload="auto"></video>
         <div class="texture"></div>
@@ -79,8 +106,8 @@
                 </div>
             </div>
         </div>
-
     </div>
+
     <!--<header>
         <h1 class="bg-yellow-400 underline text-center">Nav Bar</h1>
     </header>
