@@ -1,3 +1,32 @@
+//Responsive Navigation
+var navbarSlide = () => {
+  var burger = document.querySelector('.burger');
+  var nav = document.querySelector('.navbar');
+  const navLinks = document.querySelectorAll('.navbar li');
+
+  //Hamburger Toggle
+  burger.addEventListener('click', () => {
+    nav.classList.toggle('nav-active');
+
+    //Menu Animation
+    navLinks.forEach((link, index) => {
+      if (link.style.animation){
+      link.style.animation ='';
+      } 
+      else {
+      link.style.animation = 'navLinkFade 0.5s ease forwards ${index / 5 + 1.2}s';
+      }
+    });
+
+    //Hamburger Toggle Animation
+    burger.classList.toggle('toggle');
+  });
+}
+
+navbarSlide();
+
+
+
 var googleAPI = "AIzaSyBD4sp3WijVBagm6u9oqfslRBK4t8Dl1jE";
 
 var searchElement = document.querySelector("#city");
