@@ -33,6 +33,8 @@ var searchElement = document.querySelector("#city");
 var searchBox = new google.maps.places.SearchBox(searchElement);
 console.log(searchElement.value);
 
+
+
 // Google Search Function
 searchBox.addListener("places_changed", function getCity() {
   var place = searchBox.getPlaces()[0];
@@ -63,33 +65,41 @@ searchBox.addListener("places_changed", function getCity() {
     });
 });
 
-var geoLocation = getLocation();
+// var geoLocation = getLocation();
 
-function getLocation() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showPosition, showError);
-  } else {
-    var x = document.getElementById("location");
-    x.innerHTML = "Geolocation is not supported by this browser.";
-  }
-}
+// function getLocation() {
+//   if (navigator.geolocation) {
+//     navigator.geolocation.getCurrentPosition(showPosition, showError);
+//   } else {
+//     var x = document.getElementById("location");
+//     x.innerHTML = "Geolocation is not supported by this browser.";
+//   }
+// }
 
-function showError(error) {
-  switch (error.code) {
-    case error.PERMISSION_DENIED:
-      x.innerHTML = "User denied the request for Geolocation.";
-      break;
-    case error.POSITION_UNAVAILABLE:
-      x.innerHTML = "Location information is unavailable.";
-      break;
-    case error.TIMEOUT:
-      x.innerHTML = "The request to get user location timed out.";
-      break;
-    case error.UNKNOWN_ERROR:
-      x.innerHTML = "An unknown error occurred.";
-      break;
-  }
-}
+// function showError(error) {
+//   switch (error.code) {
+//     case error.PERMISSION_DENIED:
+//       x.innerHTML = "User denied the request for Geolocation.";
+//       break;
+//     case error.POSITION_UNAVAILABLE:
+//       x.innerHTML = "Location information is unavailable.";
+//       break;
+//     case error.TIMEOUT:
+//       x.innerHTML = "The request to get user location timed out.";
+//       break;
+//     case error.UNKNOWN_ERROR:
+//       x.innerHTML = "An unknown error occurred.";
+//       break;
+//   }
+// }
+
+var genreSelector = document.getElementById("genres");
+console.log(genreSelector.value);
+genreSelector.addEventListener('click', function getOption() {
+  output = genreSelector.options[genreSelector.selectedIndex].value;
+  // document.querySelector('.output').textContent = output;
+  console.log(genreSelector.value);
+});
 
 // Search Event through Ticketmaster
 function showPosition(data, place) {
@@ -97,7 +107,8 @@ function showPosition(data, place) {
   $.ajax({
     type: "GET",
     url:
-      "https://app.ticketmaster.com/discovery/v2/events.json?size=5&apikey=pLOeuGq2JL05uEGrZG7DuGWu6sh2OnMz&segmentName=Music&city="+searchElement.value,
+      "https://app.ticketmaster.com/discovery/v2/events.json?size=5&apikey=pLOeuGq2JL05uEGrZG7DuGWu6sh2OnMz&sort=date,asc&segmentName=Music&city="+searchElement.value+
+      "&genreId="+genreSelector.value,
     async: true,
     dataType: "json",
     success: function (json) {
@@ -113,34 +124,27 @@ function showPosition(data, place) {
   });
 }
 
-// function showEvents(json) {
-//   for (var i = 0; i < json.page.size; i++) {
-//     $("#eventone").append("<p>" + json._embedded.events[i].name + "</p>");
-//     $("#eventtwo").append("<p>" + json._embedded.events[i].dates.start.localDate + "</p>");
-//     $("#eventthree").append("<p>" + json._embedded.events[i]._embedded.venues[0].name + "</p>");
-//   }
-// }
-
 // Events Display and Navigation
-var page = 1;
+var page = 0;
 
 function getEvents(page) {
   $("#events-panel").show();
   $("#attraction-panel").hide();
 
-  if (page < 1) {
-    page = 1;
+  if (page < 0) {
+    page = 0;
     return;
   }
-  if (page > 1) {
+  if (page > 0) {
     if (page > getEvents.json.page.totalPages-1) {
-      page=1;
+      page=0;
     }
   }
   
   $.ajax({
     type:"GET",
-    url:"https://app.ticketmaster.com/discovery/v2/events.json?size=5&apikey=pLOeuGq2JL05uEGrZG7DuGWu6sh2OnMz&segmentName=Music&page="+page+'&city='+searchElement.value,
+    url:"https://app.ticketmaster.com/discovery/v2/events.json?size=5&apikey=pLOeuGq2JL05uEGrZG7DuGWu6sh2OnMz&sort=date,asc&segmentName=Music&page="+page+"&city="+searchElement.value+
+    "&genreId="+genreSelector.value,
     async:true,
     dataType: "json",
     success: function(json) {
@@ -155,10 +159,12 @@ function getEvents(page) {
 
 $("#prev").click(function() {
   getEvents(--page);
+  return false;
 });
 
 $("#next").click(function() {
   getEvents(++page);
+  return false;
 });
 
 function showEvents(json) {
@@ -166,7 +172,7 @@ function showEvents(json) {
   items.hide();
   var events = json._embedded.events;
   var item = items.first();
-  for (var i=0;i<events.length;i++) {
+  for (var i=0; i<events.length; i++) {
     item.children('.list-group-item-heading').text(events[i].name);
     item.children('.list-group-item-text').text(events[i].dates.start.localDate);
     try {
@@ -177,6 +183,7 @@ function showEvents(json) {
     item.show();
     item.off("click");
     item.click(events[i], function(eventObject) {
+      eventObject.preventDefault();
       console.log(eventObject.data);
       try {
         getAttraction(eventObject.data._embedded.attractions[0].id);
