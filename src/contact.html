@@ -24,26 +24,46 @@
 
 <body class="bg-black text-white ">
     <!-- nav bar -->
- 
-    <nav class="flex p-2 justify-end items-center text-center border">
-        <ul class="flex w-60 justify-between">
-            <button class="hover:border-2">Home</button>
-            <button>About Us</button>
-            <button>Contact</button>
+    <nav>
+        <div class="logo">
+            <img src="../assets/imgs/CC-logo.png">
+        </div>
+        <ul class="navbar">
+            <li class="index">
+                <a href="index.html">Home</a>
+            </li>
+            <li>
+             <a href="contact.html">About Us</a>
+            </li>
+            <li>
+             <a href="contact.html/#contact-us">Contact</a>
+            </li>
         </ul>
-    </nav>
+        <div class="burger">
+            <div class="line1">
 
-    <main style="background-image: url(../assets/imgs/backstage2.0.jpeg); background-repeat: no-repeat; background-position-x: center; background-size: 100vw;" >
+            </div>
+            <div class="line2">
+
+            </div>
+            <div class="line3">
+                
+            </div>
+        </div>
+    </nav> 
+
+    <!-- <main style="background-image: url(../assets/imgs/backstage2.0.jpeg); background-repeat: no-repeat; background-position-x: center; background-size: 100vw;" > -->
     <!-- Header + image -->
     <header class="flex justify-center">
         <div class="flex flex-col text-center items-center">   
             <div>
-                <!-- <img src="../assets/imgs/backstage2.0.jpeg" alt="backstage image" class="w-screen h-full opacity-60 relative"> -->
-                <card class="flex flex-col bg-opacity-70 text-center content-center mt-72 mb-80 lg:py-16 max-w-screen border-2 rounded border-gray-500 bg-gray-800"> 
+                <img src="../assets/imgs/backstage2.0.jpeg" alt="backstage image" class="w-screen h-100 opacity-60 relative">
+                <!-- <card class="flex flex-col bg-opacity-70 text-center content-center mt-72 mb-80 lg:py-16 max-w-screen border-2 rounded border-gray-500 bg-gray-800">  -->
+                <card class="grid place-items-center bg-opacity-70 text-center content-center mt-16 mb-14 md:mb-40 md:justify-center md:absolute md:top-44 lg:top-60 xl:top-80 lg:mb-96 sm:mx-10 lg:-ml-16 xl:ml-36 2xl:ml-52 3xl:ml-72 lg:p-16 max-w-screen border-2 rounded border-gray-500 bg-gray-800"> 
                 <h1 class="text-8xl">About Us</h1>
                 <h4 class="font-bold pt-2 text-gray-200">FULL STACK WEB DEV STUDENTS</h4>
                 <br>
-                <p class="text-gray-200">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum provident cum et dolorum!<br>
+                <p class="text-gray-200 px-14">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum provident cum et dolorum!<br>
                     Itaque labore reiciendis temporibus velit eos autem iste deserunt ullam quis nemo eum enim, vel, saepe accusantium?</p>
                 </img>
             </card>
@@ -53,23 +73,23 @@
     </header>
 
     <!-- Contact Form -->
+    <h2 class="mb-8 text-8xl tracking-tight text-center lg:mt-32">Contact Us</h2>
     <card class="flex justify-center">
         <div class="py-8 lg:py-16 px-4 max-w-screen-md border-2 rounded border-gray-500 bg-gray-800">
-            <h2 class="mb-4 text-4xl tracking-tight text-center text-yellow-400">Contact Us</h2>
-            <p class="mb-8 lg:mb-16 font-light text-center text-gray-200 sm:text-xl">Got a technical issue? Want to send feedback about a beta feature? Need details about our Business plan? Let us know.</p>
+            <p class="mb-8 lg:mb-16 font-light text-center text-gray-200 sm:text-xl">Got a technical issue? Want to send feedback about your experience? Need details about our Business plan or want to contribute to Concert Crawlers?<br><br>Let us know!</p>
             <form action="#" class="space-y-8">
                 <div>
                     <label for="name" class="block mb-2 text-sm text-gray-100">Full name</label>
-                    <input for="name" id="name" class="border text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 focus:ring-primary-500 focus:border-primary-500 shadow-sm-light bg-gray-700 border-gray-600 placeholder-gray-400 text-white " placeholder="Jane Doe" required>
+                    <input for="name" id="name" class="border text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 shadow-sm-light bg-gray-700 border-gray-600 placeholder-gray-400 text-white " placeholder="Jane Doe" required>
                 </div>
                 <div>
                     <label for="email" class="block mb-2 text-sm font-medium text-gray-100">Your email</label>
-                    <input type="email" id="email" class="shadow-sm border text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 focus:ring-primary-500 focus:border-primary-500 hadow-sm-light bg-gray-700 border-gray-600 placeholder-gray-400 text-white " placeholder="name@flowbite.com" required>
+                    <input type="email" id="email" class="shadow-sm border text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 hadow-sm-light bg-gray-700 border-gray-600 placeholder-gray-400 text-white " placeholder="name@flowbite.com" required>
                 </div>
     
                 <div class="sm:col-span-2">
                     <label for="message" class="block mb-2 text-sm font-medium text-gray-100">Your message</label>
-                    <textarea id="message" class="block p-2.5 w-full text-sm rounded-lg shadow-sm border focus:ring-primary-500 focus:border-primary-500 focus:ring-primary-500 focus:border-primary-500 bg-gray-700 border-gray-600 placeholder-gray-400 text-white " placeholder="Leave a comment..."></textarea>
+                    <textarea id="message" class="block p-2.5 w-full text-sm rounded-lg shadow-sm border focus:ring-primary-500 focus:border-primary-500 bg-gray-700 border-gray-600 placeholder-gray-400 text-white " placeholder="Leave a comment..."></textarea>
                 </div>
                 <button type="submit" class="py-3 px-5 text-sm font-medium text-center text-white border border-x-gray-400 rounded-lg bg-primary-700 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 hover:bg-primary-700 focus:ring-primary-800">Send message</button>
             </form>
@@ -78,11 +98,12 @@
 
     <!-- Let's Connect -->
     <section class="flex flex-col text-center pt-40">
-        <h1 class="text-8xl pb-8">Let's Connect</h1>
-        <div class="flex flex-row flex-wrap justify-evenly my-14">
+        <h1 class="text-8xl pb-2">Let's Connect!</h1>
+        <h4 class="font-bold pb-8 text-2xl text-gray-200">Developers:</h4>
+        <div class="flex flex-row flex-wrap justify-evenly mb-14">
             <card class="flex flex-col mt-2 py-4 px-4 w-72 max-w-screen-md border-2 rounded border-gray-500 bg-gray-800">
                 <h1 class="text-2xl">Sahen Garcia</h1>
-                <div class="flex justify-between p-4"> 
+                <div class="flex justify-around p-4"> 
                     <a href="https://github.com/imjustSahen" target="_blank" rel="noopener noreferrer"><i class="fa fa-github" style="font-size: 30px;"></i></a>
                     <a><i class="fa fa-linkedin" style="font-size: 30px;"></i></a>
                     <a href="mailto: imjustsahen@gmail.com"><i class="fa fa-envelope" style="font-size: 30px"></i></a>
@@ -117,6 +138,12 @@
             </card>
         </div>
     </section>
+
+    <footer class="flex justify-center">
+        <div class="logo ">
+            <img src="../assets/imgs/CC-logo.png" class="h-10">
+        </div>
+    </footer>
 
     </main>
 </body>
