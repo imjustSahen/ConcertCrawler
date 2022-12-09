@@ -27,22 +27,22 @@ navbarSlide();
 
 
 
-var googleAPI = "AIzaSyBD4sp3WijVBagm6u9oqfslRBK4t8Dl1jE";
+// var googleAPI = "AIzaSyBD4sp3WijVBagm6u9oqfslRBK4t8Dl1jE";
 
 var searchElement = document.querySelector("#city");
 var searchBox = new google.maps.places.SearchBox(searchElement);
 console.log(searchElement.value);
-
+var genreSelector = document.getElementById("genres");
 
 
 // Google Search Function
-searchBox.addListener("places_changed", function getCity() {
+searchBox.addListener("places_changed", async function getCity() {
   var place = searchBox.getPlaces()[0];
   if (place == null) return;
   var latitude = place.geometry.location.lat();
   var longitude = place.geometry.location.lng();
   console.log(place);
-  fetch("https://maps.googleapis.com/maps/api/js", {
+  await fetch("https://maps.googleapis.com/maps/api/js", {
     mode: "no-cors",
     method: "POST",
     headers: {
@@ -93,22 +93,18 @@ searchBox.addListener("places_changed", function getCity() {
 //   }
 // }
 
-var genreSelector = document.getElementById("genres");
-console.log(genreSelector.value);
+// Genre Selector Function
 genreSelector.addEventListener('click', function getOption() {
-  output = genreSelector.options[genreSelector.selectedIndex].value;
-  // document.querySelector('.output').textContent = output;
-  console.log(genreSelector.value);
+  return showPosition();
 });
 
 // Search Event through Ticketmaster
-function showPosition(data, place) {
+async function showPosition(data, place) {
 
-  $.ajax({
+  await $.ajax({
     type: "GET",
     url:
-      "https://app.ticketmaster.com/discovery/v2/events.json?size=5&apikey=pLOeuGq2JL05uEGrZG7DuGWu6sh2OnMz&sort=date,asc&segmentName=Music&city="+searchElement.value+
-      "&genreId="+genreSelector.value,
+      "https://app.ticketmaster.com/discovery/v2/events.json?size=5&apikey=VK10fDjGhgdBljljVCFGpQUOfYaPJrpy&sort=date,asc&segmentName=Music&city="+searchElement.value+"&genreId="+genreSelector.value,
     async: true,
     dataType: "json",
     success: function (json) {
@@ -127,7 +123,7 @@ function showPosition(data, place) {
 // Events Display and Navigation
 var page = 0;
 
-function getEvents(page) {
+async function getEvents(page) {
   $("#events-panel").show();
   $("#attraction-panel").hide();
 
@@ -141,10 +137,9 @@ function getEvents(page) {
     }
   }
   
-  $.ajax({
+  await $.ajax({
     type:"GET",
-    url:"https://app.ticketmaster.com/discovery/v2/events.json?size=5&apikey=pLOeuGq2JL05uEGrZG7DuGWu6sh2OnMz&sort=date,asc&segmentName=Music&page="+page+"&city="+searchElement.value+
-    "&genreId="+genreSelector.value,
+    url:"https://app.ticketmaster.com/discovery/v2/events.json?size=5&apikey=VK10fDjGhgdBljljVCFGpQUOfYaPJrpy&sort=date,asc&segmentName=Music&page="+page+"&city="+searchElement.value+"&genreId="+genreSelector.value,
     async:true,
     dataType: "json",
     success: function(json) {
@@ -198,7 +193,7 @@ function showEvents(json) {
 function getAttraction(id) {
   $.ajax({
     type:"GET",
-    url:"https://app.ticketmaster.com/discovery/v2/attractions/"+id+".json?apikey=pLOeuGq2JL05uEGrZG7DuGWu6sh2OnMz",
+    url:"https://app.ticketmaster.com/discovery/v2/attractions/"+id+".json?apikey=VK10fDjGhgdBljljVCFGpQUOfYaPJrpy",
     async:true,
     dataType: "json",
     success: function(json) {
