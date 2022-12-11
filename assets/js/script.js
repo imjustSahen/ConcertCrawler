@@ -28,6 +28,9 @@ navbarSlide();
  // Search History Array
 let searchElHistory = JSON.parse(localStorage.getItem("city")) || [];
 
+// Saved Event History
+var savedEventResults = [];
+
 // var googleAPI = "AIzaSyBD4sp3WijVBagm6u9oqfslRBK4t8Dl1jE";
 
 var searchElement = document.querySelector("#city");
@@ -223,6 +226,33 @@ function getAttraction(id) {
   });
 }
 
+var saveButton = document.getElementById('search-button')
+// To store individual events, tied to showAttraction func
+function storeEvent() {
+  var eventTitle = document.getElementById('event-title').innerHTML;
+  console.log(eventTitle);
+  var eventGenre = document.getElementById('classification').innerHTML;
+  console.log(eventGenre);
+
+  var savedEvent = {
+    eventTitle, eventGenre
+  };
+
+  saveButton.addEventListener("click", function(e) {
+    e.preventDefault(); 
+    
+    if (savedEventResults.indexOf(savedEvent) !== -1) {
+      return;
+    }
+
+    savedEventResults.push(savedEvent);
+
+    localStorage.setItem('savedEventResults', JSON.stringify(savedEventResults));
+    // renderMessage();
+  });
+  
+};
+
 function showAttraction(json) {
   $("#events-panel").hide();
   $("#attraction-panel").show();
@@ -234,6 +264,8 @@ function showAttraction(json) {
   $("#attraction .list-group-item-heading").first().text(json.name);
   $("#attraction img").first().attr('src',json.images[0].url);
   $("#classification").text(json.classifications[0].segment.name + " - " + json.classifications[0].genre.name + " - " + json.classifications[0].subGenre.name);
+
+  return storeEvent();
 }
 
 getEvents(page);
