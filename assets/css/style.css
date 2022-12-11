@@ -218,17 +218,24 @@ nav {
     /*display: none;*/
     display: block;
     padding: 5rem;
-    color: white;
+    color: black;
 }
-.results:hover {
+
+.results h4:hover {
     color: #9747FF;
     cursor: pointer;
 }
+
+#attraction {
+    color: #9747FF;
+}
+
 .resultsDisplay {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
+
 .googleMapResults {
     flex-grow: 1;
     order: 2;
