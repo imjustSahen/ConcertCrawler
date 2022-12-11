@@ -14,6 +14,7 @@
 /*Navigation Bar*/
 nav {
     display: flex;
+    height: 6rem;
     align-items: center;
     justify-content: space-between;
     z-index: 35;
@@ -22,8 +23,8 @@ nav {
 
 .logo {
     margin: 2rem;
-    max-width: 125px;
-    min-width: 50px;
+    max-width: 7rem;
+    flex-shrink: 2;
 }
 
 .navbar {
@@ -41,10 +42,15 @@ nav {
 .navbar a{
     text-decoration: none;
     font-weight: 400;
-    color: var(--yellow);
+    color: white;
     text-transform: uppercase;
-    font-size: 12px;
-    font-weight: 400;
+    font-size: 14px;
+}
+
+.navbar a:hover{
+    font-weight: 800;
+    color: var(--yellow);
+    cursor: pointer;
 }
 
 .burger {
@@ -58,30 +64,6 @@ nav {
     background-color: white;
     margin: 6px;
     transition: all 0.3s ease;
-}
-
-@media screen and (max-width:768px) {
-    body {
-        overflow-x: hidden;
-    }
-    .navbar{
-        position: absolute;
-        right: 0px;
-        height: 100vh;
-        top: 10vh;
-        background-color: rgba(0, 0, 0, 0.5);
-        display: flex;
-        flex-direction: column;
-        width: 40%;
-        transform: translateX(100%);
-        transition: transform 0.4s ease-in;
-    }
-    .navbar li {
-        opacity: 0;
-    }
-    .burger {
-        display: block;
-    }
 }
 
 .nav-active {
@@ -113,11 +95,12 @@ nav {
 
 /*Video Hero Style*/
 .vidHero {
-    height: 100vh;
+    height: calc(100vh - 6rem);
     width:100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 0;
 }
 
 .vidHero::after {
@@ -148,18 +131,9 @@ nav {
     color: white;
 }
 
-.vidHero .texture {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -15;   
-    background-image: url('../imgs/cross-stripes.png');
-}
-
 .vidHero .intro {
     width: 75%;
+    padding-bottom: 4rem;
 }
 
 .vidHero .intro h1 {
@@ -238,6 +212,48 @@ nav {
     color: inherit;
 }
 
+/*Search Results Styling*/
+.results {
+    background-color: black;
+    /*display: none;*/
+    display: block;
+    padding: 5rem;
+    color: white;
+}
+.results:hover {
+    color: #9747FF;
+    cursor: pointer;
+}
+.resultsDisplay {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.googleMapResults {
+    flex-grow: 1;
+    order: 2;
+}
+
+#events {
+    flex-grow: 2;
+    order: 1;
+}
+
+h3 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 800;
+    font-size: 2rem;
+    color: white;
+}
+
+.pager {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+
   /* Testing w/ JS */
 #events-container {
     display: flex;
@@ -283,5 +299,61 @@ nav {
     }
     .vidHero .intro h2 {
         font-size: 1rem;
+    }
+    body {
+        overflow-x: hidden;
+    }
+    .navbar{
+        position: absolute;
+        right: 0px;
+        height: 100vh;
+        top: 10vh;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        flex-direction: column;
+        width: 40%;
+        transform: translateX(100%);
+        transition: transform 0.4s ease-in;
+    }
+    .navbar li {
+        opacity: 0;
+    }
+    .burger {
+        display: block;
+    }
+}
+
+/*for Mobile*/
+@media screen and (max-width:414px){
+    .vidHero .intro h1 {
+        font-size: 2rem;
+    }
+    .vidHero .intro h2 {
+        font-size: .75rem;
+    }
+    body {
+        overflow-x: hidden;
+    }
+    .navbar{
+        position: absolute;
+        right: 0px;
+        height: 100vh;
+        top: 7vh;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        transform: translateX(100%);
+        transition: transform 0.4s ease-in;
+    }
+    .navbar li {
+        opacity: 0;
+    }
+    .burger {
+        right: 0px;
+        display: block;
+    }
+    .vidHero .intro .searchSection .search_input_item input[type=text] {
+        min-width: auto;
     }
 }
