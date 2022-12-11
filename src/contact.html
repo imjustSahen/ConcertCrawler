@@ -89,9 +89,12 @@
     
                 <div class="sm:col-span-2">
                     <label for="message" class="block mb-2 text-sm font-medium text-gray-100">Your message</label>
-                    <textarea id="message" class="block p-2.5 w-full text-sm rounded-lg shadow-sm border focus:ring-primary-500 focus:border-primary-500 bg-gray-700 border-gray-600 placeholder-gray-400 text-white " placeholder="Leave a comment..."></textarea>
+                    <textarea id="message" class="block p-2.5 w-full text-sm rounded-lg shadow-sm border focus:ring-primary-500 focus:border-primary-500 bg-gray-700 border-gray-600 placeholder-gray-400 text-white " placeholder="Leave a comment..." required></textarea>
                 </div>
-                <button type="submit" class="py-3 px-5 text-sm font-medium text-center text-white border border-x-gray-400 rounded-lg bg-primary-700 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 hover:bg-primary-700 focus:ring-primary-800">Send message</button>
+                <div class="flex justify-between">
+                <button id="formBtn" type="submit" class="py-3 px-5 text-sm font-medium text-center text-white border border-x-gray-400 rounded-lg bg-primary-700 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 hover:bg-primary-700 focus:ring-primary-800">Send message</button>
+                <div id="alert" class="text-center px-3 mr-5 border-b hidden "></div>
+                </div>
             </form>
         </div>
     </card>
@@ -147,4 +150,6 @@
 
     </main>
 </body>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="../assets/js/contact.js"></script>
 </html>
