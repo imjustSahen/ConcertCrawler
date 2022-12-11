@@ -25,7 +25,8 @@ var navbarSlide = () => {
 
 navbarSlide();
 
-
+ // Search History Array
+let searchElHistory = JSON.parse(localStorage.getItem("city")) || [];
 
 // var googleAPI = "AIzaSyBD4sp3WijVBagm6u9oqfslRBK4t8Dl1jE";
 
@@ -56,14 +57,31 @@ searchBox.addListener("places_changed", async function getCity() {
   })
     .then(function (res) {
       console.log(res);
-      // return res.json();
+      //return res.json();
     })
     .then(function (data) {
+
+      // Local Storage for city Search------->
+      let cityName = document.querySelector("#city").value;
+      
+      var city = {
+        city: place.formatted_address,
+        lat: latitude,
+        lon: longitude,
+      };
+
+      if (!searchElHistory.includes(cityName)) {
+      searchElHistory.push(city);
+      window.localStorage.setItem("SearchHistory", JSON.stringify(searchElHistory));
+      
+      }
+
       console.log(data, place.formatted_address);
       showPosition(data, place.formatted_address);
-      
+      //---------->
+
     });
-});
+  });
 
 // var geoLocation = getLocation();
 
