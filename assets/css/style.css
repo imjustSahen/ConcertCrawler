@@ -260,6 +260,32 @@ h3 {
     justify-content: space-between;
 }
 
+footer {
+    background-image: linear-gradient(135deg,#4e05ae, #FA0184, #e6fc5c);
+    margin: 0;
+    align-items: center;
+}
+.footer-text {
+    margin: 2rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    text-transform: lowercase;
+    letter-spacing: 3px;
+}
+
+.footer-copyright {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: .75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 2rem;
+}
+
+#developers {
+    padding: 5rem;
+}
 
   /* Testing w/ JS */
 #events-container {
