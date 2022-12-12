@@ -145,8 +145,8 @@ async function showPosition(data, place) {
 var page = 0;
 
 async function getEvents(page) {
-  $("#events-item").show();
-  /*$("#attraction-panel").hide();*/
+  $("#events-panel").show();
+  $("#attraction-panel").hide();
 
   if (page < 0) {
     page = 0;
@@ -184,7 +184,7 @@ $("#next").click(function() {
 });
 
 function showEvents(json) {
-  var items = $("#events-item .list-group-item");
+  var items = $("#events .list-group-item");
   items.hide();
   var events = json._embedded.events;
   var item = items.first();
@@ -254,7 +254,7 @@ function storeEvent() {
 };
 
 function showAttraction(json) {
-  /*$("#events-panel").hide();*/
+  $("#events-panel").hide();
   $("#attraction-panel").show();
   
   $("#attraction-panel").click(function() {
@@ -269,21 +269,3 @@ function showAttraction(json) {
 }
 
 getEvents(page);
-
-//code for the Accordion functionality
-var accTitles = document.querySelectorAll('.accordionTitle');
-
-accTitles.forEach((accTitle) => {
-  accTitle.addEventListener("click", () => {
-     if (accTitle.classList.contains("is-open")) {
-      accTitle.classList.remove("is-open");
-     } else {
-      var accTitlesWithIsOpen = document.querySelectorAll(".is-open");
-      accTitlesWithIsOpen.forEach((accTitlesWithIsOpen) => {
-        accTitlesWithIsOpen.classList.remove("is-open");
-      });
-
-      accTitle.classList.add("is-open");
-     }
-  })
-})
