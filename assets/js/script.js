@@ -268,3 +268,110 @@ function showAttraction(json) {
 }
 
 getEvents(page);
+
+//youtube
+$(document).ready(function(){
+  
+  var API_KEY = "AIzaSyCpYksTEh0yvdKE-aenNvGT8npyyGSmYu0"
+  var video = ''
+  
+  
+  $("#event1").on("click", function (event) {
+    event.preventDefault()
+    
+    var search = $("#event1").text()
+
+    console.log(search)
+
+    videoSearch(API_KEY,search,1)
+
+})
+  $("#event2").on("click", function (event) {
+    event.preventDefault()
+    
+    var search = $("#event2").text()
+
+    console.log(search)
+
+    videoSearch(API_KEY,search,1)
+
+})
+  $("#event3").on("click", function (event) {
+    event.preventDefault()
+    
+    var search = $("#event3").text()
+
+    console.log(search)
+
+    videoSearch(API_KEY,search,1)
+
+})
+
+  $("#event4").on("click", function (event) {
+    event.preventDefault()
+    
+    var search = $("#event4").text()
+
+    console.log(search)
+
+    videoSearch(API_KEY,search,1)
+
+})
+  $("#event5").on("click", function (event) {
+    event.preventDefault()
+    
+    var search = $("#event5").text()
+
+    console.log(search)
+
+    videoSearch(API_KEY,search,1)
+
+})
+  $("#event6").on("click", function (event) {
+    event.preventDefault()
+    
+    var search = $("#event6").text()
+
+    console.log(search)
+
+    videoSearch(API_KEY,search,1)
+
+})
+  $("#event7").on("click", function (event) {
+    event.preventDefault()
+    
+    var search = $("#event7").text()
+
+    console.log(search)
+
+    videoSearch(API_KEY,search,1)
+
+})
+  $("#event8").on("click", function (event) {
+    event.preventDefault()
+    
+    var search = $("#event8").text()
+
+    console.log(search)
+
+    videoSearch(API_KEY,search,1)
+
+})
+
+})
+
+function videoSearch(key,search,maxResults) { 
+  $("#videos").empty()
+  $.get("https://www.googleapis.com/youtube/v3/search?key=" + key + "&type=video&part=snippet&maxResults=" + maxResults + "&q=" +search,function(data){
+    console.log(data)
+
+    data.items.forEach(item => {
+      video = `
+      <iframe width="400" height="320" src="http://www.youtube.com/embed/${item.id.videoId}" frameborder="0"></iframe>
+
+      `
+      $("#videos").append(video)
+    });
+  })
+
+}
