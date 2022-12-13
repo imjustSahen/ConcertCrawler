@@ -1,3 +1,18 @@
+// var googleAPI = "AIzaSyBD4sp3WijVBagm6u9oqfslRBK4t8Dl1jE";
+
+ // Search History Array
+ let searchElHistory = JSON.parse(localStorage.getItem("city")) || [];
+
+ // Saved Event History
+ var savedEventResults = [];
+ 
+ 
+ 
+ var searchElement = document.querySelector("#city");
+ var searchBox = new google.maps.places.SearchBox(searchElement);
+ console.log(searchElement.value);
+ var genreSelector = document.getElementById("genres");
+
 //Responsive Navigation
 var navbarSlide = () => {
   var burger = document.querySelector('.burger');
@@ -25,20 +40,6 @@ var navbarSlide = () => {
 
 navbarSlide();
 
- // Search History Array
-let searchElHistory = JSON.parse(localStorage.getItem("city")) || [];
-
-// Saved Event History
-var savedEventResults = [];
-
-// var googleAPI = "AIzaSyBD4sp3WijVBagm6u9oqfslRBK4t8Dl1jE";
-
-var searchElement = document.querySelector("#city");
-var searchBox = new google.maps.places.SearchBox(searchElement);
-console.log(searchElement.value);
-var genreSelector = document.getElementById("genres");
-
-
 // Google Search Function
 searchBox.addListener("places_changed", async function getCity() {
   var place = searchBox.getPlaces()[0];
@@ -60,11 +61,10 @@ searchBox.addListener("places_changed", async function getCity() {
   })
     .then(function (res) {
       console.log(res);
-      //return res.json();
+      // return res.json();
     })
     .then(function (data) {
 
-      // Local Storage for city Search------->
       let cityName = document.querySelector("#city").value;
       
       var city = {
@@ -81,10 +81,9 @@ searchBox.addListener("places_changed", async function getCity() {
 
       console.log(data, place.formatted_address);
       showPosition(data, place.formatted_address);
-      //---------->
-
+      
     });
-  });
+});
 
 // var geoLocation = getLocation();
 
@@ -125,7 +124,7 @@ async function showPosition(data, place) {
   await $.ajax({
     type: "GET",
     url:
-      "https://app.ticketmaster.com/discovery/v2/events.json?size=5&apikey=VK10fDjGhgdBljljVCFGpQUOfYaPJrpy&sort=date,asc&segmentName=Music&city="+searchElement.value+"&genreId="+genreSelector.value,
+      "https://app.ticketmaster.com/discovery/v2/events.json?size=8&apikey=VK10fDjGhgdBljljVCFGpQUOfYaPJrpy&sort=date,asc&segmentName=Music&city="+searchElement.value+"&genreId="+genreSelector.value,
     async: true,
     dataType: "json",
     success: function (json) {
@@ -145,8 +144,8 @@ async function showPosition(data, place) {
 var page = 0;
 
 async function getEvents(page) {
-  $("#events-item").show();
-  /*$("#attraction-panel").hide();*/
+  $("#events-panel").show();
+  $("#attraction-panel").hide();
 
   if (page < 0) {
     page = 0;
@@ -160,7 +159,7 @@ async function getEvents(page) {
   
   await $.ajax({
     type:"GET",
-    url:"https://app.ticketmaster.com/discovery/v2/events.json?size=5&apikey=VK10fDjGhgdBljljVCFGpQUOfYaPJrpy&sort=date,asc&segmentName=Music&page="+page+"&city="+searchElement.value+"&genreId="+genreSelector.value,
+    url:"https://app.ticketmaster.com/discovery/v2/events.json?size=8&apikey=VK10fDjGhgdBljljVCFGpQUOfYaPJrpy&sort=date,asc&segmentName=Music&page="+page+"&city="+searchElement.value+"&genreId="+genreSelector.value,
     async:true,
     dataType: "json",
     success: function(json) {
@@ -184,12 +183,12 @@ $("#next").click(function() {
 });
 
 function showEvents(json) {
-  var items = $("#events-item .list-group-item");
+  var items = $("#events .list-group-item");
   items.hide();
   var events = json._embedded.events;
   var item = items.first();
-  for (var i=0; i<events.length; i++) {
-    item.children('.list-group-item-heading').text(events[i].name);
+  for (var i = 0; i < events.length; i++) {
+    item.children('.list-group-item-heading').text(events[i].name + ' @ ' + events[i]._embedded.venues[0].name);
     item.children('.list-group-item-text').text(events[i].dates.start.localDate);
     try {
       item.children(".venue").text(events[i]._embedded.venues[0].name + " in " + events[i]._embedded.venues[0].city.name);
@@ -254,7 +253,7 @@ function storeEvent() {
 };
 
 function showAttraction(json) {
-  /*$("#events-panel").hide();*/
+  $("#events-panel").hide();
   $("#attraction-panel").show();
   
   $("#attraction-panel").click(function() {
@@ -262,28 +261,10 @@ function showAttraction(json) {
   });
   
   $("#attraction .list-group-item-heading").first().text(json.name);
-  $("#attraction img").first().attr('src',json.images[0].url);
+  $("#attraction-img img").first().attr('src',json.images[0].url);
   $("#classification").text(json.classifications[0].segment.name + " - " + json.classifications[0].genre.name + " - " + json.classifications[0].subGenre.name);
 
   return storeEvent();
 }
 
 getEvents(page);
-
-//code for the Accordion functionality
-var accTitles = document.querySelectorAll('.accordionTitle');
-
-accTitles.forEach((accTitle) => {
-  accTitle.addEventListener("click", () => {
-     if (accTitle.classList.contains("is-open")) {
-      accTitle.classList.remove("is-open");
-     } else {
-      var accTitlesWithIsOpen = document.querySelectorAll(".is-open");
-      accTitlesWithIsOpen.forEach((accTitlesWithIsOpen) => {
-        accTitlesWithIsOpen.classList.remove("is-open");
-      });
-
-      accTitle.classList.add("is-open");
-     }
-  })
-})

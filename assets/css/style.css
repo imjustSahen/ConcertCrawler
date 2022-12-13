@@ -213,9 +213,126 @@ nav {
 }
 
 /*Search Results Styling*/
-.results {
+.display-container {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
     background-color: black;
-    /*display: none;*/
+    padding: 20px;
+  }
+
+  .panel-body {
+    flex-basis: 66.66%;
+    margin: 0px;
+  }
+  .panel-side {
+    flex-basis: 16.66%;
+  }
+
+  .list-group {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  .list-group-item .list-group-item-heading {
+    background-color: rgb(27, 22, 22);
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin-top: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #9747FF;
+    margin: 2px;
+
+  }
+
+  .list-group-item-heading:hover {
+    box-shadow: 2px 4px 4px 2px rgba(0, 0, 0, 0.255);
+    color: purple;
+    background-color: #777;
+  }
+
+  .attraction .panel-body {
+    background-color: rgb(0, 0, 0);
+    border: 2px solid black;
+  }
+
+  .list-group-item {
+    text-decoration: none;
+  }
+
+  .pager {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0px;
+  } 
+
+  .pager a {
+    text-decoration: none;
+    size: 25px;
+  }
+
+  .previous, .next {
+    list-style: none;
+    cursor: pointer;
+    font-size: 35px;
+  }
+
+  #previous {
+    padding-right: 5px;
+  }
+
+  #next {
+    padding-left: 5px;
+  }
+
+  .attraction-container {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    background-color: rgb(41, 41, 41);
+    padding: 10px;
+  }
+
+  #attraction-display {
+    flex-basis: 80%;
+    flex-grow: 2;
+    margin: 0px;
+    justify-content: center;
+    display: flex;
+    justify-content: space-around;
+
+  }
+
+  .attraction-side {
+    flex-basis: 20%;
+
+  }
+
+  #attraction {
+    border: 2px solid black;
+    text-align: center;
+    color: red;
+    font-size: 18px;
+    margin-right: 5px;
+  }
+
+  #attraction-img {
+    border: 2px solid gray;
+    width: 400px;
+    height: 400px;
+    margin-left: 5px;
+  }
+/* .results {
+    background-color: black;
+    display: none;
     display: block;
     padding: 5rem;
     color: black;
