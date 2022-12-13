@@ -11,8 +11,6 @@ $("#formBtn").on("click", function(event) {
     var inputEmail = document.querySelector("#email").value;
     var inputMessage = document.querySelector("#message").value.trim();
 
-    var textResponse = document.querySelector("#thanks");
-
   let form = {
     Name: inputName,
     Email: inputEmail,
