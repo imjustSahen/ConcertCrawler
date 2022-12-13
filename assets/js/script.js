@@ -256,7 +256,7 @@ function showAttraction(json) {
   $("#events-panel").hide();
   $("#attraction-panel").show();
   
-  $("#attraction-panel").click(function() {
+  $("#goback-btn").click(function() {
     getEvents(page);
   });
   
