@@ -229,8 +229,9 @@ header {
 #events-panel {
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
+    justify-content: center;
     align-items: center;
+    width: 100vw;
 }
 
 #panel-footer {
@@ -545,6 +546,10 @@ footer {
 
 #developers {
   padding: 5rem;
+}
+
+#events-section {
+
 }
 
 /* Testing w/ JS */
