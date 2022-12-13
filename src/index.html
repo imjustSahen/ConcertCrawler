@@ -54,7 +54,7 @@
     </nav>
 
     <!--Video Background. If browser doesn't support video, replace with image-->
-    <div class="vidHero">
+    <header class="vidHero">
         <video src="../assets/imgs/Pexels Videos 2022395.mp4" type="video/mp4" alt="Video Background" loop muted
             autoplay preload="auto"></video>
 
@@ -97,107 +97,109 @@
                     </select>
                 </div>
                 <!--Date Input-->
-                <div class="search_input_item">
+                <!-- <div class="search_input_item">
                     <div class="search_input_item">
                         <input type="date" class="datePicker">
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
-    </div>
+    </header>
 
     <!--Search results-->
-    <h3 class="message"></h3>
-    <div class="list-group" id="history"></div>
-    <div id="map"></div>
-    <div id="events"></div>
-     <table>
-        <tbody>
-            <tr id="events-container">
-                <td id="eventone" class="event-card"></td>
-                <td id="eventtwo" class="event-card"></td>
-                <td id="eventthree" class="event-card"></td>
-            </tr>
-        </tbody>
-    </table>
-    <div class="container">
-        <div>
+    <section id="events-section">
+        <h3 class="message"></h3>
+        <div class="list-group" id="history"></div>
+        <div id="map"></div>
+        <div id="events"></div>
+        <table>
+            <tbody>
+                <tr id="events-container">
+                    <td id="eventone" class="event-card"></td>
+                    <td id="eventtwo" class="event-card"></td>
+                    <td id="eventthree" class="event-card"></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="container">
             <div>
-                <div id="events-panel" class="panel panel-primary">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Events</h3>
-                    </div>
-                    <div class="display-container">
-                        <div class="panel-side">
+                <div>
+                    <div id="events-panel" class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Events</h3>
                         </div>
-                        <div class="panel-body">
-                            <div id="events" class="list-group">
-                                <a href="#" class="list-group-item">
-                                    <h4 value="" class="list-group-item-heading"></h4>
-                                </a>
-                                <a href="#" class="list-group-item">
-                                    <h4 class="list-group-item-heading"></h4>
-                                </a>
-                                <a href="#" class="list-group-item">
-                                    <h4 class="list-group-item-heading"></h4>
-                                </a>
-                                <a href="#" class="list-group-item">
-                                    <h4 class="list-group-item-heading"></h4>
-                                </a>
-                                <a href="#" class="list-group-item">
-                                    <h4 class="list-group-item-heading"></h4>
-                                </a>
-                                <a href="#" class="list-group-item">
-                                    <h4 class="list-group-item-heading"></h4>
-                                </a>
-                                <a href="#" class="list-group-item">
-                                    <h4 class="list-group-item-heading"></h4>
-                                </a>
-                                <a href="#" class="list-group-item">
-                                    <h4 class="list-group-item-heading"></h4>
-                                </a>
+                        <div class="display-container">
+                            <div class="panel-side">
+                            </div>
+                            <div class="panel-body">
+                                <div id="events" class="list-group">
+                                    <a href="#" class="list-group-item">
+                                        <h4 value="" class="list-group-item-heading"></h4>
+                                    </a>
+                                    <a href="#" class="list-group-item">
+                                        <h4 class="list-group-item-heading"></h4>
+                                    </a>
+                                    <a href="#" class="list-group-item">
+                                        <h4 class="list-group-item-heading"></h4>
+                                    </a>
+                                    <a href="#" class="list-group-item">
+                                        <h4 class="list-group-item-heading"></h4>
+                                    </a>
+                                    <a href="#" class="list-group-item">
+                                        <h4 class="list-group-item-heading"></h4>
+                                    </a>
+                                    <a href="#" class="list-group-item">
+                                        <h4 class="list-group-item-heading"></h4>
+                                    </a>
+                                    <a href="#" class="list-group-item">
+                                        <h4 class="list-group-item-heading"></h4>
+                                    </a>
+                                    <a href="#" class="list-group-item">
+                                        <h4 class="list-group-item-heading"></h4>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="panel-side">
                             </div>
                         </div>
-                        <div class="panel-side">
+                        <div class="panel-footer">
+                            <nav>
+                                <ul class="pager">
+                                    <li id="prev" class="previous"><a href="#"><span aria-hidden="true">&larr;</span></a>
+                                    </li>
+                                    <li id="next" class="next"><a href="#"><span aria-hidden="true">&rarr;</span></a></li>
+                                </ul>
+                            </nav>
                         </div>
                     </div>
-                    <div class="panel-footer">
-                        <nav>
-                            <ul class="pager">
-                                <li id="prev" class="previous"><a href="#"><span aria-hidden="true">&larr;</span></a>
-                                </li>
-                                <li id="next" class="next"><a href="#"><span aria-hidden="true">&rarr;</span></a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-                <div id='attraction-panel' class="panel panel-primary">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Attraction</h3>
-                    </div>
-                    <div class="attraction-container">
-                        <div class="attraction-side">
+                    <div id='attraction-panel' class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Attraction</h3>
                         </div>
-                        <div id="attraction-display">
-                            <div id="attraction" class="attraction panel-body">
-                                <h4 id="event-title" class="list-group-item-heading">Attraction title</h4>
-                                <p id="classification"></p>
-                                <button type="submit" class="btn search-button" id="search-button"
-                                    aria-label="submit search">
-                                    Save for Later
-                                </button>
+                        <div class="attraction-container">
+                            <div class="attraction-side">
                             </div>
-                            <div class="attraction panel-body" id="attraction-img">
-                                <img class="col-xs-12" src="" width="400px" height="400px">
+                            <div id="attraction-display">
+                                <div id="attraction" class="attraction panel-body">
+                                    <h4 id="event-title" class="list-group-item-heading">Attraction title</h4>
+                                    <p id="classification"></p>
+                                    <button type="submit" class="btn search-button" id="search-button"
+                                        aria-label="submit search">
+                                        Save Event
+                                    </button>
+                                </div>
+                                <div class="attraction panel-body" id="attraction-img">
+                                    <img class="col-xs-12" src="" width="400px" height="400px">
+                                </div>
                             </div>
-                        </div>
-                        <div class="attraction-side">
+                            <div class="attraction-side">
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
     <!--Footer coding from Tailwind CSS-->
     <footer class="text-center text-white">
