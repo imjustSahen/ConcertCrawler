@@ -559,8 +559,8 @@ video {
   }
 }
 
-.col-end-8 {
-  grid-column-end: 8;
+.visible {
+  visibility: visible;
 }
 
 .m-4 {
@@ -844,10 +844,6 @@ video {
 
 .p-4 {
   padding: 1rem;
-}
-
-.p-8 {
-  padding: 2rem;
 }
 
 .py-4 {
