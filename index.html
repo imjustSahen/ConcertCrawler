@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Concert Crawler </title>
 
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link href="./assets/css/normalize.css" rel="stylesheet">
     <link href="./assets/css/style.css" rel="stylesheet">
     <link href="./assets/css/output.css" rel="stylesheet">
 
@@ -25,36 +27,44 @@
 
 <body>
     <!--Navigation-->
-    <nav>
+    <header>
         <div class="logo">
             <img src="./assets/imgs/CC-logo.png">
         </div>
-        <ul class="navbar">
-            <li class="index">
-                <a href="index.html">Home</a>
-            </li>
-            <li>
-                <a href="contact.html">About Us</a>
-            </li>
-            <li>
-                <a href="contact.html/#contact-us">Contact</a>
-            </li>
-        </ul>
-        <div class="burger">
-            <div class="line1">
+        
+        <nav>
+            <button aria-controls="primary-navigation" aria-expanded="false" class="mobileNav-toggle">
+                <span class="sr-only">Menu</span>
+                <div class="burger">
+                    <div class="line1">
+        
+                    </div>
+                    <div class="line2">
+        
+                    </div>
+                    <div class="line3">
+        
+                    </div>
+                </div>
+            </button>
 
-            </div>
-            <div class="line2">
+            <ul id="primary-navigation" class="primary-navigation flex" data-visible="false">
+                <li class="active">
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="contact.html">About Us</a>
+                </li>
+                <li>
+                    <a href="contact.html/#contact-us">Contact</a>
+                </li>
+            </ul>
+        </nav>
 
-            </div>
-            <div class="line3">
-
-            </div>
-        </div>
-    </nav>
+    </header>
 
     <!--Video Background. If browser doesn't support video, replace with image-->
-    <header class="vidHero">
+    <section class="vidHero">
         <video src="./assets/imgs/Pexels Videos 2022395.mp4" type="video/mp4" alt="Video Background" loop muted
             autoplay preload="auto"></video>
 
@@ -104,7 +114,7 @@
                 </div>
             </div>
         </div>
-    </header>
+    </section>
 
     <!--Search results-->
     <section id="events-section">
@@ -175,7 +185,7 @@
                     <div id='attraction-panel' class="panel panel-primary">
                         <div class="panel-heading">
                             <h3 class="panel-title">Attraction</h3>
-                            <button id="goback-btn"><a href="#"><span aria-hidden="true">&larr;</span></a> GO BACK</button>
+                            <button id="goback-btn"><a href="#"><span aria-hidden="true">&larr;</span></a> Back to Search</button>
                         </div>
                         <div class="attraction-container">
                             <div class="attraction-side">
@@ -184,13 +194,16 @@
                                 <div id="attraction" class="attraction panel-body">
                                     <h4 id="event-title" class="list-group-item-heading">Attraction title</h4>
                                     <p id="classification"></p>
+                                    <div class="attraction panel-body" id="attraction-img">
+                                        <img class="col-xs-12" src="" width="400px" height="400px">
+                                    </div>
                                     <button type="submit" class="btn search-button" id="search-button"
                                         aria-label="submit search">
                                         Save Event
                                     </button>
                                 </div>
-                                <div class="attraction panel-body" id="attraction-img">
-                                    <img class="col-xs-12" src="" width="400px" height="400px">
+                                
+                                <div class="attraction panel-body video" id="attraction-img">
                                     <div id="videos"></div>
                                 </div>
                                 
