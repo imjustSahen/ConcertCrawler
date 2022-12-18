@@ -14,31 +14,26 @@
  var genreSelector = document.getElementById("genres");
 
 //Responsive Navigation
-var navbarSlide = () => {
-  var burger = document.querySelector('.burger');
-  var nav = document.querySelector('.navbar');
-  const navLinks = document.querySelectorAll('.navbar li');
+const primaryNav = document.querySelector('.primary-navigation');
+const navToggle = document.querySelector('.mobileNav-toggle');
+const burger = document.querySelector('.burger');
 
-  //Hamburger Toggle
-  burger.addEventListener('click', () => {
-    nav.classList.toggle('nav-active');
+navToggle.addEventListener('click', () => {
+  const visibleNav = primaryNav.getAttribute('data-visible');
 
-    //Menu Animation
-    navLinks.forEach((link, index) => {
-      if (link.style.animation){
-      link.style.animation ='';
-      } 
-      else {
-      link.style.animation = 'navLinkFade 0.5s ease forwards ${index / 5 + 1.2}s';
-      }
-    });
+  if (visibleNav === "false") {
+    primaryNav.setAttribute('data-visible', true);
+    primaryNav.setAttribute('aria-expanded', true);
+  } else {
+    primaryNav.setAttribute('data-visible', false);
+    primaryNav.setAttribute('aria-expanded', false);
+  }
 
-    //Hamburger Toggle Animation
-    burger.classList.toggle('toggle');
-  });
-}
+  //Burger animation
+  burger.classList.toggle('toggle');
 
-navbarSlide();
+  console.log(visibleNav)
+})
 
 // Google Search Function
 searchBox.addListener("places_changed", async function getCity() {
@@ -367,8 +362,7 @@ function videoSearch(key,search,maxResults) {
 
     data.items.forEach(item => {
       video = `
-      <iframe width="400" height="320" src="http://www.youtube.com/embed/${item.id.videoId}" frameborder="0"></iframe>
-
+      <iframe width="853" height="505" src="http://www.youtube.com/embed/${item.id.videoId}" frameborder="0"></iframe>
       `
       $("#videos").append(video)
     });
