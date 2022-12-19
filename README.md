@@ -16,9 +16,7 @@ The project is a web application that provides a simple interface that enables u
 This project was created using HTML and Javascript, as well as Foundational CSS and Tailwind CSS framework.
 
 The project was inspired by this USER STORY:<br>
-As a live Music Enthusiast <br>
-I want to find concerts happening locally or anywhere I’m traveling <br>
-So I can find more music to love and support the local music scene as well as artist I already enjoy listening to
+As a live Music Enthusiast I want to find concerts happening locally or anywhere I’m traveling so I can find more music to love and support the local music scene as well as artist I already enjoy listening to
 <br>
 
 ## API used
@@ -31,9 +29,11 @@ So I can find more music to love and support the local music scene as well as ar
 The project:
 <li>Uses Google Maps input the city the user wants to see results  for</li>
 <li>Allows the user to refine the results by using the genre filter dropdown</li>
-<li>Displays a list of events in any given area, with navigation  arrows to display further results</li>
+<li>Displays a list of 8 events, with navigation arrows to display further results</li>
 <li>Displays a selected artist's genre, portrait, and most popular youtube video</li>
 <li>Saves a lists of user's recent location searches, saved events and contact form information to local storage</li>
+<li>User flow and beginning development can be found here: <a href="https://www.figma.com/file/vN7U4lzR3owKm8ZxLV8aZg/Band-in-Town?node-id=8%3A913&t=DqlrYkGZIXn4bxGb-1"> https://www.figma.com/file/vN7U4lzR3owKm8ZxLV8aZg/Band-in-Town?node-id=8%3A913&t=DqlrYkGZIXn4bxGb-1</a>
+ <br>
 <br>
 
 ## Working Application
