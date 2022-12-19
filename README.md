@@ -6,13 +6,14 @@
 * [Description](#description)
 * [Working Application](#working-application)
 * [Demo](#demo)
+* [Credits](#credits)
 * [License](#license)
 
 
 ## General info
 The project is a web application that provides a simple interface that enables users to input a city with an optional genre filter and receive a list of concerts within a 25 mile radius.
 
-This project was created using HTML and Javascript, as well as CSS and Tailwind CSS framework.
+This project was created using HTML and Javascript, as well as Foundational CSS and Tailwind CSS framework.
 
 The project was inspired by this USER STORY:<br>
 As a live Music Enthusiast <br>
@@ -28,14 +29,18 @@ So I can find more music to love and support the local music scene as well as ar
 
 ## Description
 The project:
-<li>Uses Google Maps input the city the user wants to see results for</li>
+<li>Uses Google Maps input the city the user wants to see results  for</li>
 <li>Allows the user to refine the results by using the genre filter dropdown</li>
-<li>Displays a list of five events, with navigation arrows to display further results</li>
-<li>Saves a list of the user's recent location searches</li>
+<li>Displays a list of events in any given area, with navigation  arrows to display further results</li>
+<li>Displays a selected artist's genre, portrait, and most popular youtube video</li>
+<li>Saves a lists of user's recent location searches, saved events and contact form information to local storage</li>
 <br>
 
 ## Working Application
 The project can be found at: 
+https://imjustsahen.github.io/ConcertCrawler/
+
+The github respository can be found at:
 https://github.com/imjustSahen/ConcertCrawler
 
 ## Demo
@@ -44,6 +49,18 @@ https://github.com/imjustSahen/ConcertCrawler
 ![Screenshot 2022-12-12 182212](https://user-images.githubusercontent.com/115752437/207210925-3ce4a029-bd96-4d8d-950f-33feffecff3f.png)
 
 ![expanded](https://user-images.githubusercontent.com/115752437/207210934-e87243b7-c8fc-425e-8e18-10d6209bac4c.png)
+
+## Credits 
+Contributers:
+
+* Sahen Garcia [Github](https://github.com/imjustSahen)
+
+* Paula Hopker [Github](https://github.com/thepauladenise)
+
+* Matthew Delgado [Github](https://github.com/DelgaMatt)
+
+* Carson Garbe [Github](https://github.com/carsongarbe)
+<br>
 
 ## License
 MIT License
