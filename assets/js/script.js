@@ -1,17 +1,15 @@
-// var googleAPI = "AIzaSyBD4sp3WijVBagm6u9oqfslRBK4t8Dl1jE";
+// const googleAPI = "AIzaSyBD4sp3WijVBagm6u9oqfslRBK4t8Dl1jE";
 
- // Search History Array
- let searchElHistory = JSON.parse(localStorage.getItem("city")) || [];
+// Search History Array
+let searchElHistory = JSON.parse(localStorage.getItem("city")) || [];
 
- // Saved Event History
- var savedEventResults = [];
+// Saved Event History
+var savedEventResults = [];
  
- 
- 
- var searchElement = document.querySelector("#city");
- var searchBox = new google.maps.places.SearchBox(searchElement);
- console.log(searchElement.value);
- var genreSelector = document.getElementById("genres");
+var searchElement = document.querySelector("#city");
+var searchBox = new google.maps.places.SearchBox(searchElement);
+console.log(searchElement.value);
+var genreSelector = document.getElementById("genres");
 
 //Responsive Navigation
 const primaryNav = document.querySelector('.primary-navigation');
@@ -56,7 +54,6 @@ searchBox.addListener("places_changed", async function getCity() {
   })
     .then(function (res) {
       console.log(res);
-      // return res.json();
     })
     .then(function (data) {
 
@@ -80,41 +77,13 @@ searchBox.addListener("places_changed", async function getCity() {
     });
 });
 
-// var geoLocation = getLocation();
-
-// function getLocation() {
-//   if (navigator.geolocation) {
-//     navigator.geolocation.getCurrentPosition(showPosition, showError);
-//   } else {
-//     var x = document.getElementById("location");
-//     x.innerHTML = "Geolocation is not supported by this browser.";
-//   }
-// }
-
-// function showError(error) {
-//   switch (error.code) {
-//     case error.PERMISSION_DENIED:
-//       x.innerHTML = "User denied the request for Geolocation.";
-//       break;
-//     case error.POSITION_UNAVAILABLE:
-//       x.innerHTML = "Location information is unavailable.";
-//       break;
-//     case error.TIMEOUT:
-//       x.innerHTML = "The request to get user location timed out.";
-//       break;
-//     case error.UNKNOWN_ERROR:
-//       x.innerHTML = "An unknown error occurred.";
-//       break;
-//   }
-// }
-
 // Genre Selector Function
 genreSelector.addEventListener('click', function getOption() {
   return showPosition();
 });
 
 // Search Event through Ticketmaster
-async function showPosition(data, place) {
+async function showPosition() {
 
   await $.ajax({
     type: "GET",
@@ -129,7 +98,7 @@ async function showPosition(data, place) {
       showEvents(json);
       // initMap(position, json);
     },
-    error: function (xhr, status, err) {
+    error: function (err) {
       console.log(err);
     },
   });
@@ -161,7 +130,7 @@ async function getEvents(page) {
           getEvents.json = json;
   			  showEvents(json);
   		   },
-    error: function(xhr, status, err) {
+    error: function(err) {
   			  console.log(err);
   		   }
   });
@@ -214,7 +183,7 @@ function getAttraction(id) {
     success: function(json) {
           showAttraction(json);
   		   },
-    error: function(xhr, status, err) {
+    error: function(err) {
   			  console.log(err);
   		   }
   });
@@ -264,96 +233,85 @@ function showAttraction(json) {
 
 getEvents(page);
 
-//youtube
-$(document).ready(function(){
-  
-  var API_KEY = "AIzaSyCpYksTEh0yvdKE-aenNvGT8npyyGSmYu0"
-  var video = ''
-  
-  
+// YouTube
+$(document).ready(function () {
+  var API_KEY = "AIzaSyCpYksTEh0yvdKE-aenNvGT8npyyGSmYu0";
+  var video = "";
+
   $("#event1").on("click", function (event) {
-    event.preventDefault()
-    
-    var search = $("#event1").text()
+    event.preventDefault();
 
-    console.log(search)
+    var search = $("#event1").text();
 
-    videoSearch(API_KEY,search,1)
+    console.log(search);
 
-})
+    videoSearch(API_KEY, search, 1);
+  });
   $("#event2").on("click", function (event) {
-    event.preventDefault()
-    
-    var search = $("#event2").text()
+    event.preventDefault();
 
-    console.log(search)
+    var search = $("#event2").text();
 
-    videoSearch(API_KEY,search,1)
+    console.log(search);
 
-})
+    videoSearch(API_KEY, search, 1);
+  });
   $("#event3").on("click", function (event) {
-    event.preventDefault()
-    
-    var search = $("#event3").text()
+    event.preventDefault();
 
-    console.log(search)
+    var search = $("#event3").text();
 
-    videoSearch(API_KEY,search,1)
+    console.log(search);
 
-})
+    videoSearch(API_KEY, search, 1);
+  });
 
   $("#event4").on("click", function (event) {
-    event.preventDefault()
-    
-    var search = $("#event4").text()
+    event.preventDefault();
 
-    console.log(search)
+    var search = $("#event4").text();
 
-    videoSearch(API_KEY,search,1)
+    console.log(search);
 
-})
+    videoSearch(API_KEY, search, 1);
+  });
   $("#event5").on("click", function (event) {
-    event.preventDefault()
-    
-    var search = $("#event5").text()
+    event.preventDefault();
 
-    console.log(search)
+    var search = $("#event5").text();
 
-    videoSearch(API_KEY,search,1)
+    console.log(search);
 
-})
+    videoSearch(API_KEY, search, 1);
+  });
   $("#event6").on("click", function (event) {
-    event.preventDefault()
-    
-    var search = $("#event6").text()
+    event.preventDefault();
 
-    console.log(search)
+    var search = $("#event6").text();
 
-    videoSearch(API_KEY,search,1)
+    console.log(search);
 
-})
+    videoSearch(API_KEY, search, 1);
+  });
   $("#event7").on("click", function (event) {
-    event.preventDefault()
-    
-    var search = $("#event7").text()
+    event.preventDefault();
 
-    console.log(search)
+    var search = $("#event7").text();
 
-    videoSearch(API_KEY,search,1)
+    console.log(search);
 
-})
+    videoSearch(API_KEY, search, 1);
+  });
   $("#event8").on("click", function (event) {
-    event.preventDefault()
-    
-    var search = $("#event8").text()
+    event.preventDefault();
 
-    console.log(search)
+    var search = $("#event8").text();
 
-    videoSearch(API_KEY,search,1)
+    console.log(search);
 
-})
-
-})
+    videoSearch(API_KEY, search, 1);
+  });
+});
 
 function videoSearch(key,search,maxResults) { 
   $("#videos").empty()
