@@ -1,8 +1,4 @@
-//Contact Form JS
-
 let formHistory = JSON.parse(localStorage.getItem("")) || [];
-
-
 
 $("#formBtn").on("click", function(event) {
     var inputName = document.querySelector("#name").value;
