@@ -36,7 +36,7 @@ The project:
 
 ## Working Application
 The project can be found at: 
-https://github.com/imjustSahen/ThePetSitter
+https://github.com/imjustSahen/ConcertCrawler
 
 ## Demo
 ![concertcrawler](https://user-images.githubusercontent.com/115752437/207210907-1d614238-8acf-4635-9bc6-bae6e852195d.png)
