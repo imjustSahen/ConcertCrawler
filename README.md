@@ -1,7 +1,8 @@
 # ![cc-logo](assets/imgs/CC-logo.png) <br> Concert Crawler
 
-## Table of contents
+## <ins>Table of contents
 * [General info](#general-info)
+* [User Story](#user-story)
 * [API Used](#api-used)
 * [Description](#description)
 * [Working Application](#working-application)
@@ -10,48 +11,46 @@
 * [License](#license)
 
 
-## General info
+## <ins>General info
 The project is a web application that provides a simple interface that enables users to input a city with an optional genre filter and receive a list of concerts within a 25 mile radius.
 
 This project was created using HTML and Javascript, as well as Foundational CSS and Tailwind CSS framework.
 
-The project was inspired by this USER STORY:<br>
-
+## <ins>User Story
 As a live Music Enthusiast I want to find concerts happening locally or anywhere I’m traveling so I can find more music to love and support the local music scene as well as artist I already enjoy listening to.
 
-<br>
 
-## API used
+## <ins>API used
 <li>Google Maps API</li>
 <li>TicketMaster API</li>
 <li>Youtube API</li>
 <br>
 
-## Description
-The project:
-<li>Uses Google Maps input the city the user wants to see results  for</li>
+## <ins>Description
+<li>User is able to input city they'd like to see results for</li>
 <li>Allows the user to refine the results by using the genre filter dropdown</li>
 <li>Displays a list of eight events, with navigation arrows to display further results</li>
 <li>Displays a selected artist's genre, portrait, and most popular youtube video</li>
 <li>Saves a lists of user's recent location searches, saved events and contact form information to local storage</li>
-<li>User flow and beginning development can be found here: <a href="https://www.figma.com/file/vN7U4lzR3owKm8ZxLV8aZg/Band-in-Town?node-id=8%3A913&t=DqlrYkGZIXn4bxGb-1"> https://www.figma.com/file/vN7U4lzR3owKm8ZxLV8aZg/Band-in-Town?node-id=8%3A913&t=DqlrYkGZIXn4bxGb-1</a>
- <br>
+<li>User flow and beginning development can be found here: 
 
-## Working Application
-The project can be found at: 
-https://imjustsahen.github.io/ConcertCrawler/
+ [Figma Board](https://www.figma.com/file/vN7U4lzR3owKm8ZxLV8aZg/Band-in-Town?node-id=8%3A913&t=DqlrYkGZIXn4bxGb-1)</li>
 
-The github respository can be found at:
-https://github.com/imjustSahen/ConcertCrawler
+## <ins>Working Application
+[Deployed Application](https://imjustsahen.github.io/ConcertCrawler/)
 
-## Demo
-![concertcrawler](https://user-images.githubusercontent.com/115752437/207210907-1d614238-8acf-4635-9bc6-bae6e852195d.png)
+[Github Repository](https://github.com/imjustSahen/ConcertCrawler)
 
-![Screenshot 2022-12-12 182212](https://user-images.githubusercontent.com/115752437/207210925-3ce4a029-bd96-4d8d-950f-33feffecff3f.png)
+## <ins>Demo
+<br>
 
-![expanded](https://user-images.githubusercontent.com/115752437/207210934-e87243b7-c8fc-425e-8e18-10d6209bac4c.png)
+![Home Page](https://user-images.githubusercontent.com/115049801/209237826-4b7099c9-575b-4a89-8eff-2a1ace66b1b0.png)
 
-## Credits 
+![Contact Page](https://user-images.githubusercontent.com/115049801/209238020-1451dcb4-aa21-4cca-bd7b-e2adb993315d.png)
+
+![Concert Crawler](https://user-images.githubusercontent.com/115049801/209239971-2a11fd23-06cf-47b3-b50f-1152d39c04ed.gif)
+
+## <ins>Credits 
 Contributers:
 
 * Sahen Garcia [Github](https://github.com/imjustSahen)
@@ -63,8 +62,10 @@ Contributers:
 * Carson Garbe [Github](https://github.com/carsongarbe)
 <br>
 
-## License
+## <ins>License
 MIT License
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Copyright (c) 2022 Sahen
 
