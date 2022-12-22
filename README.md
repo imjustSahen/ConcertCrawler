@@ -1,6 +1,6 @@
 # ![cc-logo](assets/imgs/CC-logo.png) <br> Concert Crawler
 
-## Table of contents
+## <ins>Table of contents</ins>
 * [General info](#general-info)
 * [API Used](#api-used)
 * [Description](#description)
@@ -9,43 +9,48 @@
 * [License](#license)
 
 
-## General info
+## <ins>General info</ins>
 The project is a web application that provides a simple interface that enables users to input a city with an optional genre filter and receive a list of concerts within a 25 mile radius.
 
-This project was created using HTML and Javascript, as well as CSS and Tailwind CSS framework.
+This project was created using HTML and Javascript, as well as Foundational CSS and Tailwind CSS framework.
 
 The project was inspired by this USER STORY:<br>
 As a live Music Enthusiast I want to find concerts happening locally or anywhere I’m traveling so I can find more music to love and support the local music scene as well as artist I already enjoy listening to.
 <br>
 
-## API used
+## <ins>API used</ins>
 <li>Google Maps API</li>
 <li>TicketMaster API</li>
 <li>Youtube API</li>
 <br>
 
-## Description
-The project:
+## <ins>Description</ins>
 <li>Uses Google Maps input the city the user wants to see results for</li>
 <li>Allows the user to refine the results by using the genre filter dropdown</li>
 <li>Displays a list of eight events, with navigation arrows to display further results</li>
 <li>Saves a list of the user's recent location searches</li>
-<li>User flow and beginning development can be found here: <a href="https://www.figma.com/file/vN7U4lzR3owKm8ZxLV8aZg/Band-in-Town?node-id=8%3A913&t=DqlrYkGZIXn4bxGb-1"> https://www.figma.com/file/vN7U4lzR3owKm8ZxLV8aZg/Band-in-Town?node-id=8%3A913&t=DqlrYkGZIXn4bxGb-1</a>
-<br>
+<li>User flow and beginning development can be found here: 
 
-## Working Application
-The project can be found at: 
-https://github.com/imjustSahen/ConcertCrawler
+[Figma Board](https://www.figma.com/file/vN7U4lzR3owKm8ZxLV8aZg/Band-in-Town?node-id=8%3A913&t=DqlrYkGZIXn4bxGb-1)</li>
 
-## Demo
-![concertcrawler](https://user-images.githubusercontent.com/115752437/207210907-1d614238-8acf-4635-9bc6-bae6e852195d.png)
+## <ins>Working Application</ins>
 
-![Screenshot 2022-12-12 182212](https://user-images.githubusercontent.com/115752437/207210925-3ce4a029-bd96-4d8d-950f-33feffecff3f.png)
+[Deployed Application](https://imjustsahen.github.io/ConcertCrawler/)
 
-![expanded](https://user-images.githubusercontent.com/115752437/207210934-e87243b7-c8fc-425e-8e18-10d6209bac4c.png)
+[Github Repository](https://github.com/imjustSahen/ConcertCrawler)
 
-## License
+## <ins>Demo</ins>
+
+![Home Page](https://user-images.githubusercontent.com/115049801/209237826-4b7099c9-575b-4a89-8eff-2a1ace66b1b0.png)
+
+![Contact Page](https://user-images.githubusercontent.com/115049801/209238020-1451dcb4-aa21-4cca-bd7b-e2adb993315d.png)
+
+![Concert Crawler](https://user-images.githubusercontent.com/115049801/209239971-2a11fd23-06cf-47b3-b50f-1152d39c04ed.gif)
+
+## <ins>License</ins>
 MIT License
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Copyright (c) 2022 Sahen
 
