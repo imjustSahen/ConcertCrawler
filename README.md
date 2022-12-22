@@ -6,6 +6,7 @@
 * [Description](#description)
 * [Working Application](#working-application)
 * [Demo](#demo)
+* [Credits](#credits)
 * [License](#license)
 
 
@@ -15,7 +16,9 @@ The project is a web application that provides a simple interface that enables u
 This project was created using HTML and Javascript, as well as Foundational CSS and Tailwind CSS framework.
 
 The project was inspired by this USER STORY:<br>
+
 As a live Music Enthusiast I want to find concerts happening locally or anywhere I’m traveling so I can find more music to love and support the local music scene as well as artist I already enjoy listening to.
+
 <br>
 
 ## <ins>API used</ins>
@@ -25,10 +28,11 @@ As a live Music Enthusiast I want to find concerts happening locally or anywhere
 <br>
 
 ## <ins>Description</ins>
-<li>Uses Google Maps input the city the user wants to see results for</li>
+<li>Uses Google Maps input the city the user wants to see results  for</li>
 <li>Allows the user to refine the results by using the genre filter dropdown</li>
 <li>Displays a list of eight events, with navigation arrows to display further results</li>
-<li>Saves a list of the user's recent location searches</li>
+<li>Displays a selected artist's genre, portrait, and most popular youtube video</li>
+<li>Saves a lists of user's recent location searches, saved events and contact form information to local storage</li>
 <li>User flow and beginning development can be found here: 
 
 [Figma Board](https://www.figma.com/file/vN7U4lzR3owKm8ZxLV8aZg/Band-in-Town?node-id=8%3A913&t=DqlrYkGZIXn4bxGb-1)</li>
@@ -47,7 +51,21 @@ As a live Music Enthusiast I want to find concerts happening locally or anywhere
 
 ![Concert Crawler](https://user-images.githubusercontent.com/115049801/209239971-2a11fd23-06cf-47b3-b50f-1152d39c04ed.gif)
 
+
+## <ins>Credits</ins> 
+Contributers:
+
+* Sahen Garcia [Github](https://github.com/imjustSahen)
+
+* Paula Hopker [Github](https://github.com/thepauladenise)
+
+* Matthew Delgado [Github](https://github.com/DelgaMatt)
+
+* Carson Garbe [Github](https://github.com/carsongarbe)
+<br>
+
 ## <ins>License</ins>
+
 MIT License
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
